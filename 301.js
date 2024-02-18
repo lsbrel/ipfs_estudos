@@ -59,12 +59,13 @@ async function main301() {
 
   console.log(`ADDED FILE WITH CID => ${cid}`);
 
-  const auxCid = "QmYuKjwKL6o8h29Ziv6S5P1Ta8CC5jKrsdwSnxejYTXRpn";
-  console.log("GETTING DATA FROM CID => " + cid);
+  const auxCid = "QmUZPi7DaFHEdvitvDcuH5AMTLJHskEdmQVKv89aQ3FckU";
+  console.log("GETTING DATA FROM CID => " + auxCid);
   const fs2 = unixfs(node2);
   let text = "";
 
-  for await (const chunk of fs2.cat(cid)) {
+  for await (const chunk of fs2.cat(auxCid)) {
+    console.log("a");
     text += decoder.decode(chunk, {
       stream: true,
     });
